@@ -50,7 +50,7 @@
         function startSTKPush() {
             const amount = document.getElementById('userAmount').value;
             if(!amount || amount <= 0) {
-                alert("Please enter a valid amount.");
+                alert("Please enter an amount to pay");
                 return;
             }
             const btn = document.querySelector(".btn-pay"); btn.innerText = "PROCESSING..."; btn.style.opacity = "0.5"; setTimeout(() => { window.location.href = "https://paystack.shop/pay/ttu-ac-ke"; }, 1500);
