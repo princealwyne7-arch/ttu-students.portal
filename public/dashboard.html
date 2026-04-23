@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>
+<style>.treeview a span { pointer-events: none; } .treeview a i { pointer-events: none; }</style>
+<style>.treeview-menu { display: none; background: #2c3b41; } .active > .treeview-menu { display: block !important; }</style>
+<style>.treeview-menu { display: none; } .active > .treeview-menu { display: block; }</style>
+	TTU | Dashboard
+</title><link rel="shortcut icon" href="/images/logo.png" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css" />
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.min.css" />
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="/bower_components/jvectormap/jquery-jvectormap.css" />
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/dist/css/AdminLTE.min.css" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" /><link href="/Zebra_Datepicker-master/public/css/bootstrap.css" rel="stylesheet" />
+    
+    <script src="/Zebra_Datepicker-master/examples/public/javascript/jquery-1.12.0.js"></script>
+    <script src="/Zebra_Datepicker-master/public/javascript/zebra_datepicker.js"></script>
+    <script src="/Zebra_Datepicker-master/public/javascript/zebra_datepicker.src.js"></script>
+
+    <script type="text/javascript">
+        var $j = jQuery.noConflict();
+        $j(document).ready(function () {
+            var $zdp = $j('#Main2__dtRequiredDate').data('Zebra_DatePicker');
+            // assuming the controls you want to attach the plugin to 
+            // have the "datepicker" class set
+            $j('ctl00_Main2__datepicker').Zebra_DatePicker();
+
+        });
+    </script>
+<style> 
+@media (max-width: 767px) { 
+  .sidebar-open .main-sidebar { transform: translate(0, 0) !important; left: 0 !important; } 
+  .sidebar-open .content-wrapper { transform: translate(230px, 0) !important; } 
+} 
+</style>
+<style> 
+@media (max-width: 767px) { 
+  .sidebar-open .main-sidebar { 
+    -webkit-transform: translate(0, 0) !important; 
+    -ms-transform: translate(0, 0) !important; 
+    transform: translate(0, 0) !important; 
+    left: 0 !important; 
+    display: block !important; 
+  } 
+  .sidebar-open .content-wrapper { 
+    transform: translate(230px, 0) !important; 
+  } 
+  .main-sidebar { 
+    transition: transform 0.3s ease-in-out !important; 
+  } 
+} 
+</style>
+<style> 
+@media (max-width: 767px) { 
+  .sidebar-open .main-sidebar { 
+    display: block !important; 
+    position: fixed !important; 
+    z-index: 850 !important; 
+    transform: translate(0, 0) !important; 
+    -webkit-transform: translate(0, 0) !important; 
+    left: 0 !important; 
+    width: 230px !important; 
+  } 
+  .sidebar-open .content-wrapper { 
+    transform: translate(230px, 0) !important; 
+  } 
+  /* Force the "Fade" backdrop to stay behind the sidebar */ 
+  .sidebar-open .content-wrapper:after { 
+    z-index: 840 !important; 
+  } 
+} 
+</style>
+<style> 
+  .treeview-menu { 
+    display: none; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    padding-left: 20px; 
+    background-color: #2c3b41 !important; 
+  } 
+  .treeview.active > .treeview-menu { 
+    display: block !important; 
+  } 
+</style>
+<link rel="stylesheet" href="/omni-style.css" />
+</head>
+<body class="hold-transition skin-blue sidebar-expanded-on-small">
+<div class="content-overlay"></div>
+    <form method="post" action="./Dashboard" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0A817427" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="cw2GkE8VCcopkT+CmiMpdlWOXdslSj4fI9pTGlKmg4qngT1tLt3rmuB+Eg+n5t0uTrRViEJ8T882MbBpHr74Ij3FEYcadb50r074qUiR5XS/FbbrI93tajCdgel0meW2InsRH8y2seUzwu0duaI00aVO+WR74S7vvF4z8wrp8ITz+j3EbcO6p5HRsnAROG2d6AlIhRWuq/CQV3OyEe1Ne0Mlua0gRZ3SNgAnK4oUvuG/edkQxGmo+oOhxBOhyg3HDsGLdejO0JU6NBiWwjcTT5QBE4/Jes3y28inO1tM3ftjYRXOL+v+4uNEbnAxvx6l7cgJ/TlQlEJfsBo5fUzc4zhxm8c2aF3fud4gmU2RVrSeFd3VBvRK1PwkqknN3TdC2YOi3LHlk8B7H24diDsljw4dz/W453UG4wjNjPdir1HllAJWjLJoad3WAyysvhPvTOnTFjtMSezod1IHwFFIvfbF6nKTr18SyTYlhg/hpJqnEhely56TwOu0ROKCO7sK0qpMNX2HwbsPMSkf+PPpmmd5RY8MpfeJarJQqhUIcRvbcdGMgNGz1G5D1zw9fceRtd/utYqnV5Rx8gI8KPcjGHNXxtLogZaU69Oo0LNjVsxCWboc+3eyHo31tl9iOS5sCnNahU7xmf6sfovPon/RuaRhnZzecd+JM+JSAt43rHieGBGrXjhA3ir2I5Mdfa4xbPHT94i8cw3XHvowmVVtGM2YMxgmNqk2jGR+kr4nBbPpsy5devhvojas/+nHmRGgFCsKV1C8+y9IJsT/SMrz87WL3gMtLvxi0xf+r9BDLx2rPIS8URtyImQfew3Qnryr/k+v6DkQUA0iV+n9ujdR2Bs4K+UH//8kxFxVRzxP4DXS4zkV3LF4dyDuRHyk6tP192yWVbhmRnd4NvCrcs7c7dWTEej+EpLtrNa02v+CVj9TTDOVlnxEh0nGcOzrOlVsXosuiWpiWRAZAst43QOLPmh1XH1a+YOqJg4O+cs15W4rqsvfVq+sQNquCWjCO0Hh4Vx86HnR26o5GsIeus2sYMyPR5wLvIsppmCIKFPZNMBdrUVSz1twls+6I8GG5cYy/xOOoboCDc5XgxXxtPIQtEZnqAWHqyrM62S+OIuGtARdWTdRZOMkTKKm/VLdx7iFX/FtjfwovCggIk6nVKMYrpy6iUsfxxyxhICVkuLvPyb9KnzSc5hFhWnrGfEtFezcYl/OksakyBSb52DA898jKrRU4A/R51hXmu+WE7kdwb0Nmn4fJ6pWFLeikpsSZq3FvSQmIF+c/Rn77LgWhZhq69zrj2WY/IJTp8GkwW7btZJzbuqBhzKin4MXXZawXCmKcM6V0mz0tQtplMA4isD14mZo+eAefZQN5DUxX0a2XrM=" />
+</div>
+        <div class="wrapper" style="background: #ecf0f5;">
+
+            <header class="main-header">
+
+                <!-- Logo -->
+                <a href="/Dashboard" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><b>T</b>TU</span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><b>TTU </b>Portal</span>
+                </a>
+
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <!-- Navbar Right Menu -->
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- User Account: style can be found in dropdown.less -->
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="/images/logo.png" class="user-image" alt="User Image">
+                                    <span class="hidden-xs">Welcome:
+                                        <span id="lblUser">PRINCE ALWYNE </span></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header">
+                                        <img src="/images/logo.png" class="img-circle" alt="User Image">
+
+                                        <p>
+                                            <span id="lblUser2">PRINCE ALWYNE </span>
+
+                                            
+                                        </p>
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a id="lbtnLogout" class="btn btn-default btn-flat" href="/"><i class="fa fa-sign-out"></i> Logout</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Control Sidebar Toggle Button -->
+                            <li>
+                                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="/images/logo.png" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="pull-left info">
+                            <p>
+                                <span id="lblUser3">PRINCE ALWYNE </span>
+                            </p>
+                            <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
+                        </div>
+                    </div>
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu" data-widget="tree">
+                        <li class="header">MAIN NAVIGATION</li>
+                        <li><a href="/Dashboard"><i class="fa fa-dashboard text-blue"></i><span>Dashboard</span></a></li>
+                        <li class="treeview ">
+                            <a href="#">
+                                <i class="fa fa-pie-chart text-red"></i>
+                                <span>Financials</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/pay-fees"><i class="fa fa-circle-o"></i>Pay Tuition Fee</a></li>
+								<li><a href="AccommodationFees.aspx"><i class="fa fa-circle-o"></i>Pay For Hostel</a></li>
+                                <!--<li><a href="ProformaInvoice.aspx"><i class="fa fa-circle-o"></i>Profoma Invoice</a></li>-->
+                                <!--<li><a href="FeeStatement.aspx"><i class="fa fa-circle-o"></i>Fees Statement</a></li>-->
+                                <!--<li><a href="FeesPDF.aspx"><i class="fa fa-circle-o"></i>Fees Statement - PDF</a></li>-->
+                                <li><a href="Receipts.aspx"><i class="fa fa-circle-o"></i>Payment Receipts</a></li>
+                                <!--<li><a href="FeeStructure.aspx"><i class="fa fa-circle-o"></i>Fee Structure</a></li>-->
+                            </ul>
+                        </li>
+                        <li class="treeview ">
+                            <a href="#">
+                                <i class="fa fa-graduation-cap text-green"></i>
+                                <span>Academics</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="UnitsRegistration.aspx"><i class="fa fa-circle-o"></i>Register Units</a></li>
+                                <li><a href="ProvisionalResults.aspx"><i class="fa fa-circle-o"></i>Provisional Results</a></li>
+                                <li><a href="ProvisionalTranscript.aspx"><i class="fa fa-circle-o"></i>Provisional Transcript</a></li>
+                                <li><a href="ExamCards.aspx"><i class="fa fa-circle-o"></i>Exam Cards</a></li>
+                                
+                            </ul>
+                        </li>
+                         <li id="accomID" class="treeview ">
+                            <a href="#">
+                                <i class="fa fa-building-o text-blue"></i>
+                                <span>Accommodation</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="Accommodation.aspx"><i class="fa fa-circle-o"></i>Room Booking</a></li>
+                            </ul>
+                        </li>
+                         <li class="treeview ">
+                            <a href="#">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                <span>Special Exams</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="SpecialExams.aspx?sn=sup"><i class="fa fa-circle-o"></i>Resit Exam Registration</a></li>
+                                <li><a href="SpecialExams.aspx?sn=spe"><i class="fa fa-circle-o"></i>Special Exam Registration</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview ">
+                            <a href="#">
+                                <i class="fa fa-download text-red" aria-hidden="true"></i>
+                                <span>Downloads</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="AdmissionLetter.aspx"><i class="fa fa-circle-o"></i>Admission Letter</a></li>
+                                <li><a href="HEFAllocationLetter.aspx"><i class="fa fa-file"></i>HEF Allocation Letter</a></li>
+                            </ul>
+                        </li>
+                         <li class="treeview ">
+                            <a href="#">
+                                <i class="fa fa-lightbulb-o"></i>
+                                <span>Students Clearance</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="Clearance.aspx"><i class="fa fa-circle-o"></i>Graduation Clearance</a></li>
+                                
+                            </ul>
+                               
+                        </li>
+                       
+                        <li id="sttt" class="treeview ">
+                            <a href="#">
+                                <i class="fa fa-cogs  text-blue"></i>
+                                <span>Settings</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                
+                                <li><a href="ChangePassword.aspx"><i class="fa fa-circle-o"></i>Change password</a></li>
+                            </ul>
+                        </li>
+                        <li class="header">PERIODIC ACTIVITIES</li>
+                        
+                        <li><a href="LecsEvaluation.aspx"><i class="fa fa-microphone text-yellow"></i><span>Lecturers Evaluation</span></a></li>
+                        <li><a href="Elections.aspx"><i class="fa fa-volume-up text-aqua"></i><span>TTU Election</span></a></li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>Dashboard     </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/Dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+                        <li class="active">Dashboard</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                
+    <style>
+      .button {
+        background-color: #ff0000;
+        -webkit-border-radius: 60px;
+        border-radius: 60px;
+        border: none;
+        color: #eeeeee;
+        cursor: pointer;
+        display: inline-block;
+        font-family: sans-serif;
+        font-size: 20px;
+        padding: 5px 15px;
+        text-align: center;
+        width:100%;
+        text-decoration: none;
+      }
+      @keyframes glowing {
+        0% {
+          background-color: #DC143C;
+          box-shadow: 0 0 5px #FF5733;
+        }
+        50% {
+          background-color: #DC143C;
+          box-shadow: 0 0 20px #DC143C;
+        }
+        100% {
+          background-color: #FF5733;
+          box-shadow: 0 0 5px #DC143C;
+        }
+      }
+      .button {
+        animation: glowing 1300ms infinite;
+      }
+    </style>
+    <section class="content">
+        <!-- Info boxes -->
+	
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="info-box bg-yellow">
+                    <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Total Billed:</span>
+						<!--
+                        <span class="info-box-number">Ksh.
+                                <span id="Main1_lblDR">232,560.00</span>
+						</span>
+						-->
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%"></div>
+                        </div>
+                        <a href="FeesPDF.aspx" class="small-box-footer white" style="color: white">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="info-box bg-green">
+                    <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Total Paid:</span>
+                        <span class="info-box-number">Ksh.
+                                <span id="Main1_lblCR">97,541.68</span></span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 20%"></div>
+                        </div>
+                        <a href="FeesPDF.aspx" class="small-box-footer white" style="color: white">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                
+                <div class="info-box bg-aqua">
+                    <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Balance:</span>
+						<!--
+                        <span class="info-box-number">Ksh.
+                               <span id="Main1_lblBal">135,018.32</span>
+						</span>
+						-->
+
+                        <div class="progress">
+						
+                            <div class="progress-bar" style="width: 40%"></div>
+                        </div>
+                        <a href="FeesPDF.aspx" class="small-box-footer white" style="color: white">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+		
+        <!-- Main row -->
+        <div class="row">
+            <div class="col-md-12">
+                <a class="button" href="/pay-fees">CLICK HERE TO PAY SCHOOL FEES! </a>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="col-md-4">
+                <div class="box box-default">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">User Profile</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body box-profile">
+                        <img id="Main1_ImgProfileDefault" class="profile-user-img img-responsive img-circle" alt="User profile picture" src="/images/student_m.png" style="height:200px;width:200px;" />
+                        
+                        <h3 class="profile-username text-center">
+                            <span id="Main1_lblUser">PRINCE ALWYNE </span></h3>
+
+                        <strong><i class="fa fa-book margin-r-5"></i>Programme</strong>
+
+                        <p class="text-muted">
+                            <span id="Main1_lblCourse">BED</span>
+                            -
+                            <span id="Main1_lblCProg">Bachelor of Education (Science)</span>
+                        </p>
+                        <hr>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer no-padding">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">My Stage                  
+                                    <span class="pull-right text-red"><i class="fa fa-angle-down"></i>
+                                        <span id="Main1_lblSTage">Y1S2</span></span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- /.footer -->
+                </div>
+            </div>
+            <!-- Left col -->
+            <div class="col-md-8">
+                <!-- MAP & BOX PANE -->
+
+                <!-- TABLE: LATEST ORDERS -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Personal Information</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal-default"><i class="fa fa-edit"></i>Update Profile</button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <table class="table no-margin">
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">Admission No:</a></td>
+                                        <td>
+                                            <div>
+                                                <span id="Main1_lblNo">SE218-1912/2025</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">ID/ Passport:</a></td>
+                                        <td>
+                                            <div>
+                                                <span id="Main1_lblIDNo">790718385</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Full Name:</a></td>
+                                        <td>
+                                            <div>
+                                                <span id="Main1_lblNames">PRINCE ALWYNE </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Gender:</a></td>
+                                        <td>
+                                            <div>
+                                                <span id="Main1_lblGender">Male</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Date of Birth:</a></td>
+                                        <td>
+                                            <div>
+                                                <span id="Main1_lblDOB">06/14/05</span><span id="Main1_Label8"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Phone Number:</a></td>
+                                        <td>
+                                            <div>
+                                                <span id="Main1_lblPhoneNo1">0798009448</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Email Address:</a></td>
+                                        <td>
+                                            <div>
+                                                <span id="Main1_lblEmail">PRINCEALYYNE7@gmail.com</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Postal Address:</a></td>
+                                        <td>
+                                            <div>
+                                                <span id="Main1_lblPostalAddress">2028</span>&nbsp;<span id="Main1_lblPostalAddress2"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <td><a href="#">University Email:</a></td>
+                                        <td>
+                                            <div>
+                                                <span id="Main1_lblUmail">prince.alwyne@students.ttu.ac.ke</span>&nbsp;<span id="Main1_Label2"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <td><a href="#">University Email Password:</a></td>
+                                        <td>
+                                            <div>
+                                                <span id="Main1_lblMailPass">XY%255@LK</span>&nbsp;<span id="Main1_Label4"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="col-xs-12">
+                                <div class="alert alert-info alert-dismissible fade in" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    <h4>
+                                        <span id="Main1_lblError"></span></h4>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!-- /.box-footer -->
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+    </section>
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">My Profile</h4>
+                </div>
+                <div class="modal-body">
+                    <div role="form">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Gender:</label>
+                                <select name="ctl00$Main1$ddlgender" id="Main1_ddlgender" class="form-control">
+	<option value="0">Select</option>
+	<option value="1">Male</option>
+	<option value="2">Female</option>
+
+</select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Date of Birth:</label>
+                                <input name="ctl00$Main1$txtDob" type="text" id="Main1_txtDob" class="form-control" placeholder="Date of Birth" style="width:500px;" />
+                                <script>
+                                      $j('#Main1_txtDob').Zebra_DatePicker({
+                                                  view: 'years',
+                                                           direction: [1, true],
+                                                });
+                                </script>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Home County:</label>
+                                <select name="ctl00$Main1$ddlCounty" id="Main1_ddlCounty" class="form-control">
+	<option value="0">--Select County--</option>
+	<option value="BARINGO">BARINGO</option>
+	<option value="BOMET">BOMET</option>
+	<option value="BUNGOMA">BUNGOMA</option>
+	<option value="BUSIA">BUSIA</option>
+	<option value="ELGEYO-MAR">ELGEYO-MAR</option>
+	<option value="EMBU">EMBU</option>
+	<option value="GARISSA">GARISSA</option>
+	<option value="HOMA BAY">HOMA BAY</option>
+	<option value="ISIOLO">ISIOLO</option>
+	<option value="KAJIADO">KAJIADO</option>
+	<option value="KAKAMEGA">KAKAMEGA</option>
+	<option value="KERICHO">KERICHO</option>
+	<option value="KIAMBU">KIAMBU</option>
+	<option value="KILIFI">KILIFI</option>
+	<option value="KIRINYAGA">KIRINYAGA</option>
+	<option value="KISII">KISII</option>
+	<option value="KISUMU">KISUMU</option>
+	<option value="KITUI">KITUI</option>
+	<option value="KWALE">KWALE</option>
+	<option value="LAIKIPIA">LAIKIPIA</option>
+	<option value="LAMU">LAMU</option>
+	<option value="MACHAKOS">MACHAKOS</option>
+	<option value="MAKUENI">MAKUENI</option>
+	<option value="MANDERA">MANDERA</option>
+	<option value="MARSABIT">MARSABIT</option>
+	<option value="MERU">MERU</option>
+	<option value="MIGORI">MIGORI</option>
+	<option value="MOMBASA">MOMBASA</option>
+	<option value="MURANG&#39;A">MURANG&#39;A</option>
+	<option value="NAIROBI">NAIROBI</option>
+	<option value="NAKURU">NAKURU</option>
+	<option value="NANDI">NANDI</option>
+	<option value="NAROK">NAROK</option>
+	<option value="NYAMIRA">NYAMIRA</option>
+	<option value="NYANDARUA">NYANDARUA</option>
+	<option value="NYERI">NYERI</option>
+	<option value="OTHER">OTHER</option>
+	<option value="SAMBURU">SAMBURU</option>
+	<option value="SIAYA">SIAYA</option>
+	<option value="TAITA-TAVE">TAITA-TAVE</option>
+	<option value="TANA RIVER">TANA RIVER</option>
+	<option value="THARAKA-NI">THARAKA-NI</option>
+	<option value="TRANS NZOI">TRANS NZOI</option>
+	<option value="TURKANA">TURKANA</option>
+	<option value="UASIN GISH">UASIN GISH</option>
+	<option value="VIHIGA">VIHIGA</option>
+	<option value="VOI">VOI</option>
+	<option value="WAJIR">WAJIR</option>
+	<option value="WEST POKOT">WEST POKOT</option>
+	<option value="WEST REGION">WEST REGION</option>
+
+</select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Tribe:</label>
+                                <select name="ctl00$Main1$ddlTribe" id="Main1_ddlTribe" class="form-control">
+	<option value="0">--Select Tribe--</option>
+
+</select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Disability Status:</label>
+                                <select name="ctl00$Main1$ddlDisabled" id="Main1_ddlDisabled" class="form-control select2">
+	<option value="1">None</option>
+	<option value="2">Disabled</option>
+
+</select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button onclick="__doPostBack('ctl00$Main1$btnUpdate','')" id="Main1_btnUpdate" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+<script type="text/javascript">
+$j(document).ready(function() {
+    // Toggle Sidebar & Overlay
+    $j(document).on('click', '.sidebar-toggle, .content-overlay', function(e) {
+        e.preventDefault();
+        $j('body').toggleClass('sidebar-open');
+    });
+
+    // Handle Treeview Sub-menus (Financials, Academics, etc)
+    $j('.treeview > a').on('click', function(e) {
+        e.preventDefault();
+        var $li = $j(this).parent();
+        if ($li.hasClass('active')) {
+            $li.removeClass('active').find('.treeview-menu').slideUp(200);
+        } else {
+            // Close others then open this
+            $j('.treeview').removeClass('active').find('.treeview-menu').slideUp(200);
+            $li.addClass('active').find('.treeview-menu').slideDown(200);
+        }
+    });
+});
+</script>
+</body>
+</html>
