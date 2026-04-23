@@ -199,6 +199,22 @@ function __doPostBack(eventTarget, eventArgument) {
             </header>
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="main-sidebar">
+    <section class="sidebar"> 
+      <ul class="sidebar-menu" data-widget="tree"> 
+        <li class="header">MAIN NAVIGATION</li> 
+        <li><a href="dashboard.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li> 
+        <li class="treeview"><a href="#"><i class="fa fa-money"></i> <span>Financials</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a> 
+          <ul class="treeview-menu"><li><a href="#">Pay Tuition Fee</a></li><li><a href="#">Pay For Hostel</a></li></ul></li> 
+        <li class="treeview"><a href="#"><i class="fa fa-graduation-cap"></i> <span>Academics</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a> 
+          <ul class="treeview-menu"><li><a href="#">Register Units</a></li><li><a href="#">Provisional Results</a></li></ul></li> 
+        <li class="treeview"><a href="#"><i class="fa fa-building"></i> <span>Accommodation</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a> 
+          <ul class="treeview-menu"><li><a href="#">Room Booking</a></li></ul></li> 
+        <li class="treeview"><a href="#"><i class="fa fa-warning"></i> <span>Special Exams</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a> 
+          <ul class="treeview-menu"><li><a href="#">Resit Registration</a></li></ul></li> 
+        <li class="treeview"><a href="#"><i class="fa fa-download"></i> <span>Downloads</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a> 
+          <ul class="treeview-menu"><li><a href="#">Admission Letter</a></li></ul></li> 
+      </ul> 
+    </section>
                 <!-- sidebar: style can be found in sidebar.less -->
                 <section class="sidebar">
                     <!-- Sidebar user panel -->
@@ -753,6 +769,19 @@ $j(document).ready(function() {
       const menu = parent.querySelector('.treeview-menu');
       if (menu) {
         menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      }
+    });
+  });
+</script>
+<script>
+  document.querySelectorAll('.treeview > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      const menu = parent.querySelector('.treeview-menu');
+      parent.classList.toggle('active');
+      if (menu) {
+        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
       }
     });
   });
