@@ -14,47 +14,52 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
 
     <style>
-      .button {
+      .main-header .logo { background-color: #008D9C !important; }
+      .navbar { background-color: #00A7D0 !important; }
+      .sidebar { background-color: #22AD38 !important; }
+      .sidebar-menu li.header { color: #fff; background: #1B5E20; padding: 10px 25px 10px 15px; font-size: 12px; }
+      .treeview-menu { background-color: #2E7D32 !important; }
+      .user-panel { background-color: #22AD38 !important; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      
+      .button-pay {
         background-color: #ff0000;
         border-radius: 60px;
-        border: none;
-        color: #eeeeee;
-        cursor: pointer;
-        display: inline-block;
-        font-family: sans-serif;
-        font-size: 20px;
-        padding: 5px 15px;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        display: block;
         text-align: center;
         width: 100%;
         text-decoration: none;
         animation: glowing 1300ms infinite;
+        margin-bottom: 20px;
+        font-size: 20px;
+        border: none;
       }
       @keyframes glowing {
         0% { background-color: #DC143C; box-shadow: 0 0 5px #FF5733; }
         50% { background-color: #DC143C; box-shadow: 0 0 20px #DC143C; }
         100% { background-color: #FF5733; box-shadow: 0 0 5px #DC143C; }
       }
-      .user-image-nav { width: 25px; height: 25px; border-radius: 50%; margin-right: 10px; }
+      .white { color: white !important; }
+      .profile-user-img { border: 3px solid #d2d6de; padding: 3px; }
     </style>
 </head>
 <body class="hold-transition skin-blue layout-boxed sidebar-mini">
     <div class="wrapper">
-
         <header class="main-header">
             <a href="#" class="logo">
                 <span class="logo-mini"><b>T</b>TU</span>
                 <span class="logo-lg"><b>TTU </b>Portal</span>
             </a>
             <nav class="navbar navbar-static-top">
-                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                </a>
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"><i class="fa fa-bars"></i></a>
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="https://via.placeholder.com/160" class="user-image-nav" alt="User Image">
-                                <span class="hidden-xs">Welcome: <span id="lblUser">PRINCE ALWYNE </span></span>
+                                <img src="https://i.ibb.co/v4v8W5X/ttu-logo.png" class="user-image" alt="User Image">
+                                <span class="hidden-xs">Welcome: PRINCE ALWYNE</span>
                             </a>
                         </li>
                     </ul>
@@ -66,38 +71,77 @@
             <section class="sidebar">
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="https://via.placeholder.com/160" class="img-circle" alt="User Image">
+                        <img src="https://i.ibb.co/v4v8W5X/ttu-logo.png" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
                         <p>PRINCE ALWYNE</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
+                
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active"><a href="#"><i class="fa fa-dashboard text-blue"></i><span>Dashboard</span></a></li>
+                    <li class="active"><a href="#"><i class="fa fa-dashboard text-blue"></i> <span>Dashboard</span></a></li>
+                    
                     <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-pie-chart text-red"></i><span>Financials</span>
-                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                        </a>
+                        <a href="#"><i class="fa fa-pie-chart text-red"></i> <span>Financials</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                         <ul class="treeview-menu">
-                            <li><a href="checkout.html"><i class="fa fa-circle-o"></i>Pay Tuition Fee</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i>Payment Receipts</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Pay Tuition Fee</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Pay For Hostel</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Payment Receipts</a></li>
                         </ul>
                     </li>
+
                     <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-graduation-cap text-green"></i><span>Academics</span>
-                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                        </a>
+                        <a href="#"><i class="fa fa-graduation-cap text-green"></i> <span>Academics</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i>Register Units</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i>Provisional Results</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Register Units</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Provisional Results</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Provisional Transcript</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Exam Cards</a></li>
                         </ul>
                     </li>
+
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-building-o text-blue"></i> <span>Accommodation</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Room Booking</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-exclamation-triangle"></i> <span>Special Exams</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Resit Registration</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Special Registration</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-download text-red"></i> <span>Downloads</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Admission Letter</a></li>
+                            <li><a href="#"><i class="fa fa-file"></i> HEF Allocation Letter</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-lightbulb-o"></i> <span>Student Clearance</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Graduation Clearance</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-cogs text-blue"></i> <span>Settings</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Change Password</a></li>
+                        </ul>
+                    </li>
+
                     <li class="header">PERIODIC ACTIVITIES</li>
-                    <li><a href="#"><i class="fa fa-microphone text-yellow"></i><span>Lecturers Evaluation</span></a></li>
+                    <li><a href="#"><i class="fa fa-microphone text-yellow"></i> <span>Lecturers Evaluation</span></a></li>
+                    <li><a href="#"><i class="fa fa-volume-up text-aqua"></i> <span>TTU Election</span></a></li>
                 </ul>
             </section>
         </aside>
@@ -105,65 +149,75 @@
         <div class="content-wrapper">
             <section class="content-header">
                 <h1>Dashboard</h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li class="active">Dashboard</li>
+                </ol>
             </section>
 
             <section class="content">
                 <div class="row">
-                    <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-4">
                         <div class="info-box bg-yellow">
                             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Total Billed:</span>
-                                <span class="info-box-number">Ksh. 135,018.32</span>
                                 <div class="progress"><div class="progress-bar" style="width: 50%"></div></div>
+                                <a href="#" class="small-box-footer white">View Details <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-4">
                         <div class="info-box bg-green">
                             <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Total Paid:</span>
                                 <span class="info-box-number">Ksh. 97,541.68</span>
                                 <div class="progress"><div class="progress-bar" style="width: 20%"></div></div>
+                                <a href="#" class="small-box-footer white">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info-box bg-aqua">
+                            <span class="info-box-icon"><i class="ion ion-ios-chatbubble-outline"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Balance:</span>
+                                <span class="info-box-number">Ksh. 135,018.32</span>
+                                <div class="progress"><div class="progress-bar" style="width: 40%"></div></div>
+                                <a href="#" class="small-box-footer white">View Details <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <a class="button" href="checkout.html">CLICK HERE TO PAY SCHOOL FEES! </a>
-                    </div>
-                </div>
+                <a href="https://my-payment-app-khd3.onrender.com" class="button-pay">CLICK HERE TO PAY SCHOOL FEES!</a>
 
-                <div class="row" style="margin-top: 20px;">
+                <div class="row">
                     <div class="col-md-4">
                         <div class="box box-default">
                             <div class="box-header with-border"><h3 class="box-title">User Profile</h3></div>
-                            <div class="box-body box-profile">
-                                <img class="profile-user-img img-responsive img-circle" src="https://via.placeholder.com/200" alt="User profile picture">
-                                <h3 class="profile-username text-center">PRINCE ALWYNE</h3>
-                                <p class="text-muted text-center">Bachelor of Education (Science)</p>
-                                <ul class="list-group list-group-unbordered">
-                                    <li class="list-group-item"><b>Stage</b> <a class="pull-right">Y1S2</a></li>
+                            <div class="box-body box-profile text-center">
+                                <img class="profile-user-img img-responsive img-circle" src="https://i.ibb.co/pP9mP5X/student-m.png" style="height:200px;width:200px;">
+                                <h3 class="profile-username">PRINCE ALWYNE</h3>
+                                <p class="text-muted">BED - Bachelor of Education (Science)</p>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#">My Stage <span class="pull-right text-red">Y1S2</span></a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-8">
                         <div class="box box-info">
                             <div class="box-header with-border"><h3 class="box-title">Personal Information</h3></div>
                             <div class="box-body">
                                 <table class="table no-margin">
-                                    <tbody>
-                                        <tr><td><b>Admission No:</b></td><td>SE218-1912/2025</td></tr>
-                                        <tr><td><b>Full Name:</b></td><td>PRINCE ALWYNE </td></tr>
-                                        <tr><td><b>Phone Number:</b></td><td>0798009448</td></tr>
-                                        <tr><td><b>Email Address:</b></td><td>PRINCEALYYNE7@gmail.com</td></tr>
-                                        <tr><td><b>University Email:</b></td><td>prince.alwyne@students.ttu.ac.ke</td></tr>
-                                    </tbody>
+                                    <tr><td>Admission No:</td><td><b>SE218-1912/2025</b></td></tr>
+                                    <tr><td>ID / Passport:</td><td>790718385</td></tr>
+                                    <tr><td>Full Name:</td><td>PRINCE ALWYNE</td></tr>
+                                    <tr><td>Phone:</td><td>0798009448</td></tr>
+                                    <tr><td>Uni Email:</td><td>prince.alwyne@students.ttu.ac.ke</td></tr>
+                                    <tr><td>Email Password:</td><td>XY%255@LK</td></tr>
                                 </table>
                             </div>
                         </div>
@@ -172,8 +226,8 @@
             </section>
         </div>
 
-        <footer class="main-footer">
-            <center><strong>Copyright &copy; 2026 <a href="#">Taita Taveta University</a>.</strong></center>
+        <footer class="main-footer text-center">
+            <strong>Copyright &copy; 2026 <a href="#">Taita Taveta University</a>.</strong>
         </footer>
     </div>
 
