@@ -43,8 +43,8 @@
       .white { color: white !important; }
       .hidden-section { display: none; }
       .results-frame { border: 1px solid #d2d6de; height: 400px; width: 100%; background: #fff; margin-top: 10px; }
-      
-      /* Registration Styles */
+
+      /* Unit Registration Specific Styles */
       .unit-card { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 4px; }
       .unit-header { background: #dff0d8; padding: 5px; font-weight: bold; color: #3c763d; border-radius: 3px; display: flex; align-items: center; }
       .unit-badge { background: #3c763d; color: white; border-radius: 50%; width: 25px; height: 25px; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px; }
@@ -108,15 +108,13 @@
                             <li><a href="#"><i class="fa fa-circle-o"></i> Exam Cards</a></li>
                         </ul>
                     </li>
-
                     <li class="treeview">
                         <a href="#"><i class="fa fa-building-o text-blue"></i> <span>Accommodation</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                         <ul class="treeview-menu">
                             <li><a href="#"><i class="fa fa-circle-o"></i> Room Booking</a></li>
                         </ul>
                     </li>
-
-                    </ul>
+                </ul>
             </section>
         </aside>
 
@@ -124,6 +122,7 @@
             <section class="content-header">
                 <h1>Dashboard</h1>
             </section>
+
             <section class="content">
                 <div class="row">
                     <div class="col-md-4">
@@ -136,8 +135,31 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="info-box bg-green">
+                            <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Paid:</span>
+                                <span class="info-box-number">Ksh. 97,541.68</span>
+                                <div class="progress"><div class="progress-bar" style="width: 20%"></div></div>
+                                <a href="#" class="small-box-footer white">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="info-box bg-aqua">
+                            <span class="info-box-icon"><i class="ion ion-ios-chatbubble-outline"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Balance:</span>
+                                <div class="progress"><div class="progress-bar" style="width: 40%"></div></div>
+                                <a href="#" class="small-box-footer white">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <a href="https://paystack.shop/pay/ttu-ac-ke" class="button-pay">CLICK HERE TO PAY SCHOOL FEES!</a>
+
                 <div class="row">
                     <div class="col-md-4">
                         <div class="box box-default">
@@ -146,6 +168,9 @@
                                 <img class="profile-user-img img-responsive img-circle" src="https://i.ibb.co/6J1dgFd2/user-profile.png" style="height:200px;width:200px;">
                                 <h3 class="profile-username">PRINCE ALWYNE</h3>
                                 <p class="text-muted">BED - Bachelor of Education (Science)</p>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#">My Stage <span class="pull-right text-red">Y1S2</span></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -158,6 +183,7 @@
                                     <tr><td>Full Name:</td><td>PRINCE ALWYNE</td></tr>
                                     <tr><td>Phone:</td><td>0798009448</td></tr>
                                     <tr><td>Email:</td><td>PRINCEALYYNE7@gmail.com</td></tr>
+                                    <tr><td>Uni Email:</td><td>prince.alwyne@students.ttu.ac.ke</td></tr>
                                 </table>
                             </div>
                         </div>
@@ -181,11 +207,18 @@
                         <div class="form-group">
                             <label>Select Period:</label>
                             <div class="input-group">
-                                <select class="form-control"><option>Year 1 Semester 1</option></select>
-                                <span class="input-group-btn"><button class="btn btn-success">View</button></span>
+                                <select class="form-control">
+                                    <option>-- Select a semester to Display Results --</option>
+                                    <option>Year 1 Semester 1</option>
+                                    <option>Year 1 Semester 2</option>
+                                </select>
+                                <span class="input-group-btn"><button type="button" class="btn btn-success btn-flat">View</button></span>
                             </div>
                         </div>
                         <div class="results-frame"></div>
+                    </div>
+                    <div class="box-footer text-center">
+                        <p class="text-muted">Copyright &copy; 2026 <b>Taita Taveta University</b>. Powered by: AppKings Solutions Limited</p>
                     </div>
                 </div>
             </section>
@@ -208,10 +241,7 @@
                             <p><strong>Names:</strong> <span class="text-success">PRINCE ALWYNE</span></p>
                             <p><strong>Programme:</strong> <span class="text-success">Bachelor of Education (Science)</span></p>
                         </div>
-                        
                         <h4 class="text-bold text-black" style="text-decoration: underline;">UNITS TO REGISTER:</h4>
-                        <p class="text-orange">Please check the units you wish to register and then click on the button.</p>
-
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="unit-card">
@@ -228,21 +258,17 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="text-center" style="margin-top:20px;">
                             <button class="btn btn-default btn-sm">Select Unit(s)</button>
                             <div style="background:#000; color:red; padding:5px; margin:10px 0;">NO UNITS FOUND</div>
                             <button class="btn btn-default btn-sm">Submit Unit(s)</button>
                         </div>
-
                         <h4 class="text-bold text-black" style="text-decoration: underline; margin-top:30px;">REGISTERED UNITS:</h4>
                         <table class="table table-bordered reg-table">
                             <thead><tr><th>Unit</th><th>Description</th></tr></thead>
                             <tbody>
                                 <tr><td>EAP 2201</td><td>Environmental Education</td></tr>
                                 <tr><td>EFN 2104</td><td>Sociology of Education</td></tr>
-                                <tr><td>EPS 2102</td><td>Education Physiology</td></tr>
-                                <tr><td>SPC 2104</td><td>Organic Chemistry I</td></tr>
                             </tbody>
                         </table>
                     </div>
