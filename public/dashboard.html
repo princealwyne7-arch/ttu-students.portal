@@ -41,12 +41,14 @@
         100% { background-color: #FF5733; box-shadow: 0 0 5px #DC143C; }
       }
       .white { color: white !important; }
+      .hidden-section { display: none; }
+      .results-frame { border: 1px solid #d2d6de; height: 400px; width: 100%; background: #fff; margin-top: 10px; }
     </style>
 </head>
 <body class="hold-transition skin-blue layout-boxed sidebar-mini">
     <div class="wrapper">
         <header class="main-header">
-            <a href="#" class="logo">
+            <a href="#" class="logo" onclick="showDashboard()">
                 <span class="logo-mini"><b>T</b>TU</span>
                 <span class="logo-lg"><b>TTU </b>Portal</span>
             </a>
@@ -79,7 +81,7 @@
                 
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active"><a href="#"><i class="fa fa-dashboard text-blue"></i> <span>Dashboard</span></a></li>
+                    <li class="active"><a href="#" onclick="showDashboard()"><i class="fa fa-dashboard text-blue"></i> <span>Dashboard</span></a></li>
                     
                     <li class="treeview">
                         <a href="#"><i class="fa fa-pie-chart text-red"></i> <span>Financials</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
@@ -94,7 +96,7 @@
                         <a href="#"><i class="fa fa-graduation-cap text-green"></i> <span>Academics</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                         <ul class="treeview-menu">
                             <li><a href="#"><i class="fa fa-circle-o"></i> Register Units</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Provisional Results</a></li>
+                            <li><a href="#" onclick="showResults()"><i class="fa fa-circle-o"></i> Provisional Results</a></li>
                             <li><a href="#"><i class="fa fa-circle-o"></i> Provisional Transcript</a></li>
                             <li><a href="#"><i class="fa fa-circle-o"></i> Exam Cards</a></li>
                         </ul>
@@ -144,7 +146,7 @@
             </section>
         </aside>
 
-        <div class="content-wrapper">
+        <div class="content-wrapper" id="dashboard-view">
             <section class="content-header">
                 <h1>Dashboard</h1>
             </section>
@@ -218,6 +220,44 @@
             </section>
         </div>
 
+        <div class="content-wrapper hidden-section" id="results-view">
+            <section class="content-header">
+                <h1>Results</h1>
+                <ol class="breadcrumb">
+                    <li><a href="#" onclick="showDashboard()"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li class="active">Results</li>
+                </ol>
+            </section>
+
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Provisional Results</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label>Select Period:</label>
+                            <div class="input-group">
+                                <select class="form-control">
+                                    <option>-- Select a semester to Display Results --</option>
+                                    <option>Year 1 Semester 1</option>
+                                    <option>Year 1 Semester 2</option>
+                                </select>
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-success btn-flat">View</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="results-frame">
+                            </div>
+                    </div>
+                    <div class="box-footer text-center">
+                        <p class="text-muted">Copyright &copy; 2026 <b>Taita Taveta University</b>. Powered by: AppKings Solutions Limited</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
         <footer class="main-footer text-center">
             <strong>Copyright &copy; 2026 <a href="#">Taita Taveta University</a>.</strong>
         </footer>
@@ -226,5 +266,17 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.18/js/adminlte.min.js"></script>
+
+    <script>
+      function showResults() {
+        document.getElementById('dashboard-view').classList.add('hidden-section');
+        document.getElementById('results-view').classList.remove('hidden-section');
+      }
+
+      function showDashboard() {
+        document.getElementById('results-view').classList.add('hidden-section');
+        document.getElementById('dashboard-view').classList.remove('hidden-section');
+      }
+    </script>
 </body>
 </html>
