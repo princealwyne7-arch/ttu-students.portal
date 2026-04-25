@@ -43,13 +43,6 @@
       .white { color: white !important; }
       .hidden-section { display: none; }
       .results-frame { border: 1px solid #d2d6de; height: 400px; width: 100%; background: #fff; margin-top: 10px; }
-
-      /* Unit Registration Styling */
-      .unit-card { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 4px; position: relative; }
-      .unit-header { background: #dff0d8; padding: 5px; font-weight: bold; color: #3c763d; border-radius: 3px; display: flex; align-items: center; }
-      .unit-badge { background: #3c763d; color: white; border-radius: 50%; width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 11px; }
-      .unit-title { color: #00008b; font-weight: bold; margin-top: 8px; display: block; font-size: 13px; min-height: 35px; }
-      .reg-table thead { background-color: #22AD38; color: white; }
     </style>
 </head>
 <body class="hold-transition skin-blue layout-boxed sidebar-mini">
@@ -102,7 +95,7 @@
                     <li class="treeview">
                         <a href="#"><i class="fa fa-graduation-cap text-green"></i> <span>Academics</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                         <ul class="treeview-menu">
-                            <li><a href="#" onclick="showRegistration()"><i class="fa fa-circle-o"></i> Register Units</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Register Units</a></li>
                             <li><a href="#" onclick="showResults()"><i class="fa fa-circle-o"></i> Provisional Results</a></li>
                             <li><a href="#"><i class="fa fa-circle-o"></i> Provisional Transcript</a></li>
                             <li><a href="#"><i class="fa fa-circle-o"></i> Exam Cards</a></li>
@@ -154,7 +147,10 @@
         </aside>
 
         <div class="content-wrapper" id="dashboard-view">
-            <section class="content-header"><h1>Dashboard</h1></section>
+            <section class="content-header">
+                <h1>Dashboard</h1>
+            </section>
+
             <section class="content">
                 <div class="row">
                     <div class="col-md-4">
@@ -225,10 +221,19 @@
         </div>
 
         <div class="content-wrapper hidden-section" id="results-view">
-            <section class="content-header"><h1>Results</h1></section>
+            <section class="content-header">
+                <h1>Results</h1>
+                <ol class="breadcrumb">
+                    <li><a href="#" onclick="showDashboard()"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li class="active">Results</li>
+                </ol>
+            </section>
+
             <section class="content">
                 <div class="box box-primary">
-                    <div class="box-header with-border"><h3 class="box-title">Provisional Results</h3></div>
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Provisional Results</h3>
+                    </div>
                     <div class="box-body">
                         <div class="form-group">
                             <label>Select Period:</label>
@@ -238,74 +243,16 @@
                                     <option>Year 1 Semester 1</option>
                                     <option>Year 1 Semester 2</option>
                                 </select>
-                                <span class="input-group-btn"><button type="button" class="btn btn-success btn-flat">View</button></span>
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-success btn-flat">View</button>
+                                </span>
                             </div>
                         </div>
-                        <div class="results-frame"></div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div class="content-wrapper hidden-section" id="registration-view">
-            <section class="content-header"><h1>Unit Registration</h1></section>
-            <section class="content">
-                <div class="box box-success">
-                    <div class="box-header with-border"><h3 class="box-title">Units Registration</h3></div>
-                    <div class="box-body">
-                        <div class="well well-sm" style="background-color: #fff; border-left: 5px solid #22AD38;">
-                            <p><strong>Student No:</strong> <span class="text-success">SE218-1912/2025</span></p>
-                            <p><strong>Names:</strong> <span class="text-success">PRINCE ALWYNE</span></p>
-                            <p><strong>Programme:</strong> <span class="text-success">Bachelor of Education (Science)</span></p>
-                        </div>
-
-                        <h4 class="text-bold">UNITS TO REGISTER:</h4>
-                        <div class="row">
-                            <div class="col-xs-6 col-md-4">
-                                <div class="unit-card"><input type="checkbox"> <div class="unit-header"><span class="unit-badge">1</span> AAA 2103</div><span class="unit-title">History and Development of E.African Agriculture</span></div>
+                        <div class="results-frame">
                             </div>
-                            <div class="col-xs-6 col-md-4">
-                                <div class="unit-card"><input type="checkbox"> <div class="unit-header"><span class="unit-badge">2</span> AAE 2103</div><span class="unit-title">Introduction to Agricultural Economics</span></div>
-                            </div>
-                            <div class="col-xs-6 col-md-4">
-                                <div class="unit-card"><input type="checkbox"> <div class="unit-header"><span class="unit-badge">5</span> AHE 2103</div><span class="unit-title">Introduction to Animal Production</span></div>
-                            </div>
-                            <div class="col-xs-6 col-md-4">
-                                <div class="unit-card"><input type="checkbox"> <div class="unit-header"><span class="unit-badge">6</span> BBT 2201</div><span class="unit-title">Data Communication and Networking</span></div>
-                            </div>
-                            <div class="col-xs-6 col-md-4">
-                                <div class="unit-card"><input type="checkbox"> <div class="unit-header"><span class="unit-badge">9</span> EAP 2101</div><span class="unit-title">Environmental Education</span></div>
-                            </div>
-                            <div class="col-xs-6 col-md-4">
-                                <div class="unit-card"><input type="checkbox"> <div class="unit-header"><span class="unit-badge">10</span> EDG 2103</div><span class="unit-title">Introduction to Cartography and Map Analysis</span></div>
-                            </div>
-                        </div>
-
-                        <div class="text-center" style="margin: 20px 0;">
-                            <button class="btn btn-default">Select Unit(s)</button>
-                            <div style="background:#000; color:red; padding:8px; margin:10px auto; width: fit-content; font-weight:bold;">NO UNITS FOUND</div>
-                            <button class="btn btn-default">Submit Unit(s)</button>
-                        </div>
-
-                        <h4 class="text-bold" style="border-bottom: 2px solid #22AD38; padding-bottom: 5px;">REGISTERED UNITS:</h4>
-                        <div class="table-responsive">
-                            <table class="table table-bordered reg-table">
-                                <thead><tr><th>Unit</th><th>Description</th></tr></thead>
-                                <tbody>
-                                    <tr><td>EAP 2201</td><td>Environmental Education</td></tr>
-                                    <tr><td>EFN 2104</td><td>Sociology of Education</td></tr>
-                                    <tr><td>EPS 2102</td><td>Education Physiology</td></tr>
-                                    <tr><td>SPC 2104</td><td>Organic Chemistry I</td></tr>
-                                    <tr><td>SPC 2105</td><td>Introduction to Classical Analysis & Separation</td></tr>
-                                    <tr><td>SPH 2102</td><td>Electricity and Magnetism I</td></tr>
-                                    <tr><td>SPH 2201</td><td>Mechanics II</td></tr>
-                                    <tr><td>UCU 2102</td><td>Ethics, Citizenship and Diversity</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                     <div class="box-footer text-center">
-                        <p class="text-muted small">Copyright &copy; 2026 <b>Taita Taveta University</b>. Powered by: AppKings Solutions Limited</p>
+                        <p class="text-muted">Copyright &copy; 2026 <b>Taita Taveta University</b>. Powered by: AppKings Solutions Limited</p>
                     </div>
                 </div>
             </section>
@@ -321,14 +268,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.18/js/adminlte.min.js"></script>
 
     <script>
-      function hideAll() {
-        document.getElementById('dashboard-view').style.display = 'none';
-        document.getElementById('results-view').style.display = 'none';
-        document.getElementById('registration-view').style.display = 'none';
+      function showResults() {
+        document.getElementById('dashboard-view').classList.add('hidden-section');
+        document.getElementById('results-view').classList.remove('hidden-section');
       }
-      function showDashboard() { hideAll(); document.getElementById('dashboard-view').style.display = 'block'; }
-      function showResults() { hideAll(); document.getElementById('results-view').style.display = 'block'; }
-      function showRegistration() { hideAll(); document.getElementById('registration-view').style.display = 'block'; }
+
+      function showDashboard() {
+        document.getElementById('results-view').classList.add('hidden-section');
+        document.getElementById('dashboard-view').classList.remove('hidden-section');
+      }
     </script>
 </body>
 </html>
