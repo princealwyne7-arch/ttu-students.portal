@@ -20,263 +20,430 @@
       .sidebar-menu li.header { color: #fff; background: #1B5E20; padding: 10px 25px 10px 15px; font-size: 12px; }
       .treeview-menu { background-color: #2E7D32 !important; }
       .user-panel { background-color: #22AD38 !important; border-bottom: 1px solid rgba(255,255,255,0.1); }
-      
       .button-pay {
-        background-color: #ff0000;
-        border-radius: 60px;
-        color: white;
-        font-weight: bold;
-        padding: 10px;
-        display: block;
-        text-align: center;
-        width: 100%;
-        text-decoration: none;
-        animation: glowing 1300ms infinite;
-        margin-bottom: 20px;
-        font-size: 20px;
+        background-color: #ff0000; border-radius: 60px; color: white; font-weight: bold;
+        padding: 10px; display: block; text-align: center; width: 100%; text-decoration: none;
+        animation: glowing 1300ms infinite; margin-bottom: 20px; font-size: 20px;
       }
       @keyframes glowing {
-        0% { background-color: #DC143C; box-shadow: 0 0 5px #FF5733; }
-        50% { background-color: #DC143C; box-shadow: 0 0 20px #DC143C; }
+        0%   { background-color: #DC143C; box-shadow: 0 0 5px #FF5733; }
+        50%  { background-color: #DC143C; box-shadow: 0 0 20px #DC143C; }
         100% { background-color: #FF5733; box-shadow: 0 0 5px #DC143C; }
       }
       .white { color: white !important; }
       .hidden-section { display: none; }
       .results-frame { border: 1px solid #d2d6de; height: 400px; width: 100%; background: #fff; margin-top: 10px; }
+
+      /* ===== UNIT REGISTRATION ===== */
+      .ur-panel { background:#fff; border:1px solid #d2d6de; border-top:3px solid #00a65a; border-radius:3px; padding:15px; }
+      .ur-panel-title { font-size:16px; font-weight:400; margin:0 0 15px 0; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f0f0f0; padding-bottom:10px; }
+      .ur-panel-title .panel-btns button { background:none; border:1px solid #ccc; width:22px; height:22px; cursor:pointer; font-size:12px; color:#777; padding:0; border-radius:2px; margin-left:4px; }
+      .ur-student-info { margin-bottom:18px; font-size:14px; line-height:2.1; }
+      .ur-student-info .val { color:#00a65a; font-weight:600; }
+      .ur-units-title { font-weight:700; text-decoration:underline; font-size:14px; margin-bottom:6px; }
+      .ur-instruction { color:#e67e22; font-size:13px; margin-bottom:14px; line-height:1.5; }
+      .ur-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px; }
+      .ur-cell { display:flex; flex-direction:column; }
+      .ur-chk-row { margin-bottom:4px; }
+      .ur-chk-row input[type="checkbox"] { width:17px; height:17px; cursor:pointer; vertical-align:middle; }
+      .ur-card { border:1px solid #ddd; border-radius:3px; overflow:hidden; flex:1; }
+      .ur-card-head { background:#d9ead3; padding:6px 10px; display:flex; align-items:center; gap:8px; }
+      .ur-badge { background:#2E7D32; color:#fff; border-radius:50%; width:26px; height:26px; display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:bold; flex-shrink:0; }
+      .ur-code { font-weight:700; font-size:14px; color:#333; }
+      .ur-card-body { background:#fff; padding:8px 10px; min-height:44px; }
+      .ur-name { color:#1a5276; font-weight:600; font-size:13px; line-height:1.4; }
+      .ur-btn { display:inline-block; border:1px solid #ccc; background:#f9f9f9; color:#00a65a; font-size:14px; padding:6px 18px; border-radius:3px; cursor:pointer; margin-bottom:14px; }
+      .ur-btn:hover { background:#e9f7ef; }
+      .ur-sel-title { font-weight:700; text-decoration:underline; font-size:14px; margin-bottom:8px; }
+      .ur-no-units-box { background:#000; color:#e74c3c; font-weight:bold; font-size:13px; padding:5px 10px; display:inline-block; margin-bottom:8px; }
+      .ur-sel-table { width:100%; border-collapse:collapse; margin-bottom:10px; display:none; }
+      .ur-sel-table th { background:#00a65a; color:#fff; padding:7px 10px; text-align:left; font-size:13px; }
+      .ur-sel-table td { padding:6px 10px; font-size:13px; border-bottom:1px solid #f0f0f0; }
+      .ur-reg-title { font-weight:700; text-decoration:underline; font-size:14px; margin:18px 0 10px 0; }
+      .ur-reg-table { width:100%; border-collapse:collapse; border:1px solid #ddd; }
+      .ur-reg-table th { background:#00a65a; color:#fff; padding:9px 12px; text-align:left; font-size:13px; }
+      .ur-reg-table td { padding:8px 12px; font-size:13px; border-bottom:1px solid #eee; }
+      .ur-reg-table tr:nth-child(odd) td { background:#f9f9f9; }
+      .ur-reg-table tr:nth-child(even) td:first-child { color:#1a5276; font-weight:600; }
+      .ur-footer { text-align:center; color:#888; font-size:12px; margin-top:20px; padding-top:10px; border-top:1px solid #eee; }
     </style>
 </head>
 <body class="hold-transition skin-blue layout-boxed sidebar-mini">
-    <div class="wrapper">
-        <header class="main-header">
-            <a href="#" class="logo" onclick="showDashboard()">
-                <span class="logo-mini"><b>T</b>TU</span>
-                <span class="logo-lg"><b>TTU </b>Portal</span>
-            </a>
-            <nav class="navbar navbar-static-top">
-                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"><i class="fa fa-bars"></i></a>
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="https://i.ibb.co/d080zYrQ/ttu-logo.png" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Welcome: PRINCE ALWYNE</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+<div class="wrapper">
 
-        <aside class="main-sidebar">
-            <section class="sidebar">
-                <div class="user-panel">
-                    <div class="pull-left image">
-                        <img src="https://i.ibb.co/d080zYrQ/ttu-logo.png" class="img-circle" alt="User Image">
-                    </div>
-                    <div class="pull-left info">
-                        <p>PRINCE ALWYNE</p>
-                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                    </div>
-                </div>
-                
-                <ul class="sidebar-menu" data-widget="tree">
-                    <li class="header">MAIN NAVIGATION</li>
-                    <li class="active"><a href="#" onclick="showDashboard()"><i class="fa fa-dashboard text-blue"></i> <span>Dashboard</span></a></li>
-                    
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-pie-chart text-red"></i> <span>Financials</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                        <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Pay Tuition Fee</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Pay For Hostel</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Payment Receipts</a></li>
-                        </ul>
+    <header class="main-header">
+        <a href="#" class="logo" onclick="showDashboard()">
+            <span class="logo-mini"><b>T</b>TU</span>
+            <span class="logo-lg"><b>TTU </b>Portal</span>
+        </a>
+        <nav class="navbar navbar-static-top">
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"><i class="fa fa-bars"></i></a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="https://i.ibb.co/d080zYrQ/ttu-logo.png" class="user-image" alt="User Image">
+                            <span class="hidden-xs">Welcome: PRINCE ALWYNE</span>
+                        </a>
                     </li>
-
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-graduation-cap text-green"></i> <span>Academics</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                        <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Register Units</a></li>
-                            <li><a href="#" onclick="showResults()"><i class="fa fa-circle-o"></i> Provisional Results</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Provisional Transcript</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Exam Cards</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-building-o text-blue"></i> <span>Accommodation</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                        <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Room Booking</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-exclamation-triangle"></i> <span>Special Exams</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                        <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Resit Registration</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Special Registration</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-download text-red"></i> <span>Downloads</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                        <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Admission Letter</a></li>
-                            <li><a href="#"><i class="fa fa-file"></i> HEF Allocation Letter</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-lightbulb-o"></i> <span>Clearance</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                        <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Graduation Clearance</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-cogs text-blue"></i> <span>Settings</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                        <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Change Password</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="header">PERIODIC ACTIVITIES</li>
-                    <li><a href="#"><i class="fa fa-microphone text-yellow"></i> <span>Lecturers Evaluation</span></a></li>
-                    <li><a href="#"><i class="fa fa-volume-up text-aqua"></i> <span>TTU Election</span></a></li>
                 </ul>
-            </section>
-        </aside>
+            </div>
+        </nav>
+    </header>
 
-        <div class="content-wrapper" id="dashboard-view">
-            <section class="content-header">
-                <h1>Dashboard</h1>
-            </section>
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="https://i.ibb.co/d080zYrQ/ttu-logo.png" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>PRINCE ALWYNE</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">MAIN NAVIGATION</li>
+                <li class="active"><a href="#" onclick="showDashboard()"><i class="fa fa-dashboard text-blue"></i> <span>Dashboard</span></a></li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-pie-chart text-red"></i> <span>Financials</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Pay Tuition Fee</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Pay For Hostel</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Payment Receipts</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-graduation-cap text-green"></i> <span>Academics</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                    <ul class="treeview-menu">
+                        <li><a href="#" onclick="showUnitReg()"><i class="fa fa-circle-o"></i> Register Units</a></li>
+                        <li><a href="#" onclick="showResults()"><i class="fa fa-circle-o"></i> Provisional Results</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Provisional Transcript</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Exam Cards</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-building-o text-blue"></i> <span>Accommodation</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Room Booking</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-exclamation-triangle"></i> <span>Special Exams</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Resit Registration</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Special Registration</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-download text-red"></i> <span>Downloads</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Admission Letter</a></li>
+                        <li><a href="#"><i class="fa fa-file"></i> HEF Allocation Letter</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-lightbulb-o"></i> <span>Clearance</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Graduation Clearance</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-cogs text-blue"></i> <span>Settings</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Change Password</a></li>
+                    </ul>
+                </li>
+                <li class="header">PERIODIC ACTIVITIES</li>
+                <li><a href="#"><i class="fa fa-microphone text-yellow"></i> <span>Lecturers Evaluation</span></a></li>
+                <li><a href="#"><i class="fa fa-volume-up text-aqua"></i> <span>TTU Election</span></a></li>
+            </ul>
+        </section>
+    </aside>
 
-            <section class="content">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="info-box bg-yellow">
-                            <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Total Billed:</span>
-                                <div class="progress"><div class="progress-bar" style="width: 50%"></div></div>
-                                <a href="#" class="small-box-footer white">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info-box bg-green">
-                            <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Total Paid:</span>
-                                <span class="info-box-number">Ksh. 97,541.68</span>
-                                <div class="progress"><div class="progress-bar" style="width: 20%"></div></div>
-                                <a href="#" class="small-box-footer white">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info-box bg-aqua">
-                            <span class="info-box-icon"><i class="ion ion-ios-chatbubble-outline"></i></span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Balance:</span>
-                                <div class="progress"><div class="progress-bar" style="width: 40%"></div></div>
-                                <a href="#" class="small-box-footer white">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
+    <!-- DASHBOARD -->
+    <div class="content-wrapper" id="dashboard-view">
+        <section class="content-header"><h1>Dashboard</h1></section>
+        <section class="content">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="info-box bg-yellow">
+                        <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Billed:</span>
+                            <div class="progress"><div class="progress-bar" style="width:50%"></div></div>
+                            <a href="#" class="small-box-footer white">View Details <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <a href="https://paystack.shop/pay/ttu-ac-ke" class="button-pay">CLICK HERE TO PAY SCHOOL FEES!</a>
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="box box-default">
-                            <div class="box-header with-border"><h3 class="box-title">User Profile</h3></div>
-                            <div class="box-body box-profile text-center">
-                                <img class="profile-user-img img-responsive img-circle" src="https://i.ibb.co/6J1dgFd2/user-profile.png" style="height:200px;width:200px;">
-                                <h3 class="profile-username">PRINCE ALWYNE</h3>
-                                <p class="text-muted">BED - Bachelor of Education (Science)</p>
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#">My Stage <span class="pull-right text-red">Y1S2</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="box box-info">
-                            <div class="box-header with-border"><h3 class="box-title">Personal Information</h3></div>
-                            <div class="box-body">
-                                <table class="table no-margin">
-                                    <tr><td>Admission No:</td><td><b>SE218-1912/2025</b></td></tr>
-                                    <tr><td>Full Name:</td><td>PRINCE ALWYNE</td></tr>
-                                    <tr><td>Phone:</td><td>0798009448</td></tr>
-                                    <tr><td>Email:</td><td>PRINCEALYYNE7@gmail.com</td></tr>
-                                    <tr><td>Uni Email:</td><td>prince.alwyne@students.ttu.ac.ke</td></tr>
-                                </table>
-                            </div>
+                <div class="col-md-4">
+                    <div class="info-box bg-green">
+                        <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Paid:</span>
+                            <span class="info-box-number">Ksh. 97,541.68</span>
+                            <div class="progress"><div class="progress-bar" style="width:20%"></div></div>
+                            <a href="#" class="small-box-footer white">View Details <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
-
-        <div class="content-wrapper hidden-section" id="results-view">
-            <section class="content-header">
-                <h1>Results</h1>
-                <ol class="breadcrumb">
-                    <li><a href="#" onclick="showDashboard()"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                    <li class="active">Results</li>
-                </ol>
-            </section>
-
-            <section class="content">
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Provisional Results</h3>
-                    </div>
-                    <div class="box-body">
-                        <div class="form-group">
-                            <label>Select Period:</label>
-                            <div class="input-group">
-                                <select class="form-control">
-                                    <option>-- Select a semester to Display Results --</option>
-                                    <option>Year 1 Semester 1</option>
-                                    <option>Year 1 Semester 2</option>
-                                </select>
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-success btn-flat">View</button>
-                                </span>
-                            </div>
+                <div class="col-md-4">
+                    <div class="info-box bg-aqua">
+                        <span class="info-box-icon"><i class="ion ion-ios-chatbubble-outline"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Balance:</span>
+                            <div class="progress"><div class="progress-bar" style="width:40%"></div></div>
+                            <a href="#" class="small-box-footer white">View Details <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="results-frame">
-                            </div>
-                    </div>
-                    <div class="box-footer text-center">
-                        <p class="text-muted">Copyright &copy; 2026 <b>Taita Taveta University</b>. Powered by: AppKings Solutions Limited</p>
                     </div>
                 </div>
-            </section>
-        </div>
-
-        <footer class="main-footer text-center">
-            <strong>Copyright &copy; 2026 <a href="#">Taita Taveta University</a>.</strong>
-        </footer>
+            </div>
+            <a href="https://paystack.shop/pay/ttu-ac-ke" class="button-pay">CLICK HERE TO PAY SCHOOL FEES!</a>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="box box-default">
+                        <div class="box-header with-border"><h3 class="box-title">User Profile</h3></div>
+                        <div class="box-body box-profile text-center">
+                            <img class="profile-user-img img-responsive img-circle" src="https://i.ibb.co/6J1dgFd2/user-profile.png" style="height:200px;width:200px;">
+                            <h3 class="profile-username">PRINCE ALWYNE</h3>
+                            <p class="text-muted">BED - Bachelor of Education (Science)</p>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">My Stage <span class="pull-right text-red">Y1S2</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="box box-info">
+                        <div class="box-header with-border"><h3 class="box-title">Personal Information</h3></div>
+                        <div class="box-body">
+                            <table class="table no-margin">
+                                <tr><td>Admission No:</td><td><b>SE218-1912/2025</b></td></tr>
+                                <tr><td>Full Name:</td><td>PRINCE ALWYNE</td></tr>
+                                <tr><td>Phone:</td><td>0798009448</td></tr>
+                                <tr><td>Email:</td><td>PRINCEALYYNE7@gmail.com</td></tr>
+                                <tr><td>Uni Email:</td><td>prince.alwyne@students.ttu.ac.ke</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.18/js/adminlte.min.js"></script>
+    <!-- RESULTS -->
+    <div class="content-wrapper hidden-section" id="results-view">
+        <section class="content-header">
+            <h1>Results</h1>
+            <ol class="breadcrumb">
+                <li><a href="#" onclick="showDashboard()"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li class="active">Results</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="box box-primary">
+                <div class="box-header with-border"><h3 class="box-title">Provisional Results</h3></div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Select Period:</label>
+                        <div class="input-group">
+                            <select class="form-control">
+                                <option>-- Select a semester to Display Results --</option>
+                                <option>Year 1 Semester 1</option>
+                                <option>Year 1 Semester 2</option>
+                            </select>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-success btn-flat">View</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="results-frame"></div>
+                </div>
+                <div class="box-footer text-center">
+                    <p class="text-muted">Copyright &copy; 2026 <b>Taita Taveta University</b>. Powered by: AppKings Solutions Limited</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
-    <script>
-      function showResults() {
-        document.getElementById('dashboard-view').classList.add('hidden-section');
-        document.getElementById('results-view').classList.remove('hidden-section');
-      }
+    <!-- UNIT REGISTRATION -->
+    <div class="content-wrapper hidden-section" id="unitreg-view">
+        <section class="content-header">
+            <h1>Unit Registration</h1>
+            <ol class="breadcrumb">
+                <li><a href="#" onclick="showDashboard()"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li class="active">Unit Registration</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="ur-panel">
+                <div class="ur-panel-title">
+                    <span>Units Registration</span>
+                    <div class="panel-btns">
+                        <button title="Minimize">&#8722;</button>
+                        <button title="Close" onclick="showDashboard()">&#10005;</button>
+                    </div>
+                </div>
+                <div class="ur-student-info">
+                    <div>Student No: <span class="val">SE218-1912/2025</span></div>
+                    <div>Names: <span class="val">PRINCE ALWYNE</span></div>
+                    <div>Programme: &nbsp;<span class="val">Bachelor of Education (Science)</span></div>
+                </div>
+                <div class="ur-units-title">UNITS TO REGISTER:</div>
+                <div class="ur-instruction">
+                    Please check the units you wish to register and then click on the button below.<br>
+                    To view the units registered, scroll to the bottom of this page.
+                </div>
+                <div class="ur-grid">
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="AAA 2103" data-name="History and Development of E.African Agriculture"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">1</span><span class="ur-code">AAA 2103</span></div><div class="ur-card-body"><span class="ur-name">History and Development of E.African Agriculture</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="AAE 2103" data-name="Introduction to Agricultural Economics"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">2</span><span class="ur-code">AAE 2103</span></div><div class="ur-card-body"><span class="ur-name">Introduction to Agricultural Economics</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="AHE 2103" data-name="Introduction to Animal Production"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">5</span><span class="ur-code">AHE 2103</span></div><div class="ur-card-body"><span class="ur-name">Introduction to Animal Production</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="BBT 2201" data-name="Data Communication and Networking"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">6</span><span class="ur-code">BBT 2201</span></div><div class="ur-card-body"><span class="ur-name">Data Communication and Networking</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="EAP 2101" data-name="Environmental Education"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">9</span><span class="ur-code">EAP 2101</span></div><div class="ur-card-body"><span class="ur-name">Environmental Education</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="EDG 2103" data-name="Introduction to Cartography and Map Analysis"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">10</span><span class="ur-code">EDG 2103</span></div><div class="ur-card-body"><span class="ur-name">Introduction to Cartography and Map Analysis</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="EPS 2205" data-name="Education Psychology"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">13</span><span class="ur-code">EPS 2205</span></div><div class="ur-card-body"><span class="ur-name">Education Psychology</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="HRD 2102" data-name="Development Studies &amp; Ethics"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">14</span><span class="ur-code">HRD 2102</span></div><div class="ur-card-body"><span class="ur-name">Development Studies &amp; Ethics</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="ICS 2206" data-name="Introduction to Database Management Systems"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">17</span><span class="ur-code">ICS 2206</span></div><div class="ur-card-body"><span class="ur-name">Introduction to Database Management Systems</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="SBT 2101" data-name="Survey of the Plant Kingdom"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">18</span><span class="ur-code">SBT 2101</span></div><div class="ur-card-body"><span class="ur-name">Survey of the Plant Kingdom</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="SIC 2122" data-name="System Analysis and Design"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">21</span><span class="ur-code">SIC 2122</span></div><div class="ur-card-body"><span class="ur-name">System Analysis and Design</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="SMA 2106" data-name="Analytical Geometry"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">22</span><span class="ur-code">SMA 2106</span></div><div class="ur-card-body"><span class="ur-name">Analytical Geometry</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="SPH 2204" data-name="Thermal Physics I"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">25</span><span class="ur-code">SPH 2204</span></div><div class="ur-card-body"><span class="ur-name">Thermal Physics I</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="SPH 2205" data-name="Mathematical Physics I"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">26</span><span class="ur-code">SPH 2205</span></div><div class="ur-card-body"><span class="ur-name">Mathematical Physics I</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="SZL 2102" data-name="Laboratory Methods and Techniques in Zoology"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">29</span><span class="ur-code">SZL 2102</span></div><div class="ur-card-body"><span class="ur-name">Laboratory Methods and Techniques in Zoology</span></div></div>
+                    </div>
+                    <div class="ur-cell">
+                        <div class="ur-chk-row"><input type="checkbox" class="ur-chk" data-code="SZL 2103" data-name="Introduction to Ecology and Bio-analysis"></div>
+                        <div class="ur-card"><div class="ur-card-head"><span class="ur-badge">30</span><span class="ur-code">SZL 2103</span></div><div class="ur-card-body"><span class="ur-name">Introduction to Ecology and Bio-analysis</span></div></div>
+                    </div>
+                </div>
+                <button class="ur-btn" onclick="urSelectUnits()">Select Unit(s)</button>
+                <div class="ur-sel-title">SELECTED UNITS</div>
+                <div id="ur-no-msg" class="ur-no-units-box">NO UNITS FOUND</div>
+                <table class="ur-sel-table" id="ur-sel-table">
+                    <thead><tr><th>Unit</th><th>Description</th></tr></thead>
+                    <tbody id="ur-sel-tbody"></tbody>
+                </table>
+                <br>
+                <button class="ur-btn" onclick="urSubmitUnits()">Submit Unit(s)</button>
+                <div class="ur-reg-title">REGISTERED UNITS:</div>
+                <table class="ur-reg-table">
+                    <thead><tr><th>Unit</th><th>Description</th></tr></thead>
+                    <tbody id="ur-reg-tbody">
+                        <tr><td>EAP 2201</td><td>Environmental Education</td></tr>
+                        <tr><td>EFN 2104</td><td>Sociology of Education</td></tr>
+                        <tr><td>EPS 2102</td><td>Education Physiology</td></tr>
+                        <tr><td>SPC 2104</td><td>Organic Chemistry I</td></tr>
+                        <tr><td>SPC 2105</td><td>Introduction to Classical Analysis &amp; Separation</td></tr>
+                        <tr><td>SPH 2102</td><td>Electricity and Magnetism I</td></tr>
+                        <tr><td>SPH 2201</td><td>Mechanics II</td></tr>
+                        <tr><td>UCU 2102</td><td>Ethics, Citizenship and Diversity</td></tr>
+                    </tbody>
+                </table>
+                <div class="ur-footer">Copyright &copy; 2026 <b>Taita Taveta University</b>. Powered by. AppKings Solutions Limited</div>
+            </div>
+        </section>
+    </div>
 
-      function showDashboard() {
-        document.getElementById('results-view').classList.add('hidden-section');
-        document.getElementById('dashboard-view').classList.remove('hidden-section');
+    <footer class="main-footer text-center">
+        <strong>Copyright &copy; 2026 <a href="#">Taita Taveta University</a>.</strong>
+    </footer>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.18/js/adminlte.min.js"></script>
+<script>
+  function hideAll() {
+    ['dashboard-view','results-view','unitreg-view'].forEach(function(id){
+      document.getElementById(id).classList.add('hidden-section');
+    });
+  }
+  function showDashboard() { hideAll(); document.getElementById('dashboard-view').classList.remove('hidden-section'); }
+  function showResults()   { hideAll(); document.getElementById('results-view').classList.remove('hidden-section'); }
+  function showUnitReg()   { hideAll(); document.getElementById('unitreg-view').classList.remove('hidden-section'); }
+
+  function urSelectUnits() {
+    var checked = document.querySelectorAll('.ur-chk:checked');
+    var tbody = document.getElementById('ur-sel-tbody');
+    var table = document.getElementById('ur-sel-table');
+    var noMsg = document.getElementById('ur-no-msg');
+    tbody.innerHTML = '';
+    if (checked.length === 0) { table.style.display='none'; noMsg.style.display='inline-block'; return; }
+    noMsg.style.display = 'none';
+    table.style.display = 'table';
+    checked.forEach(function(chk) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>'+chk.getAttribute('data-code')+'</td><td>'+chk.getAttribute('data-name')+'</td>';
+      tbody.appendChild(tr);
+    });
+  }
+
+  function urSubmitUnits() {
+    var checked = document.querySelectorAll('.ur-chk:checked');
+    if (checked.length === 0) { alert('Please select at least one unit before submitting.'); return; }
+    var regTbody = document.getElementById('ur-reg-tbody');
+    checked.forEach(function(chk) {
+      var code = chk.getAttribute('data-code');
+      var name = chk.getAttribute('data-name');
+      var dup = false;
+      regTbody.querySelectorAll('tr td:first-child').forEach(function(td){ if(td.textContent.trim()===code) dup=true; });
+      if (!dup) {
+        var tr = document.createElement('tr');
+        tr.innerHTML = '<td>'+code+'</td><td>'+name+'</td>';
+        regTbody.appendChild(tr);
       }
-    </script>
+      chk.checked = false;
+    });
+    document.getElementById('ur-sel-tbody').innerHTML = '';
+    document.getElementById('ur-sel-table').style.display = 'none';
+    document.getElementById('ur-no-msg').style.display = 'inline-block';
+    alert('Units submitted successfully!');
+  }
+</script>
 </body>
 </html>
